@@ -1,0 +1,48 @@
+.input_text {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 20px 0 0;
+}
+
+.input_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin: 20px 0;
+    color: var(--main-color);
+}
+
+.requst-button {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 5px 10px;
+    margin: 0 0 20px 0;
+}
+
+@media screen and (max-width: 768px) {
+    .input_text {
+        font-size: 14px;
+        margin: 0 10px 0 0;
+    }
+
+    .requst-button {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    input {
+        margin: 0 0 0 10px;
+    }
+
+    .input_container {
+        justify-content: flex-end;
+        padding: 10px;
+    }
+
+    .input_text {
+        margin: 0;
+        padding: 0;
+    }
+}
