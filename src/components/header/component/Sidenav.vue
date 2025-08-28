@@ -1,5 +1,6 @@
 <script setup>
-import Siderbar from './component/Siderbar.vue';
+import SideBody from './SideBody.vue';
+
 </script>
 
 <template>
@@ -21,8 +22,8 @@ import Siderbar from './component/Siderbar.vue';
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-            <div class="slider-box h3">
-                <Siderbar />
+            <div data-bs-dismiss="offcanvas" aria-label="Close">
+                <SideBody />
             </div>
         </div>
     </div>
@@ -36,6 +37,10 @@ import Siderbar from './component/Siderbar.vue';
     padding: 0;
 }
 
+.offcanvas.offcanvas-start {
+    width: 300px
+}
+
 .btn-close {
     --bs-btn-close-focus-shadow: 0 0 0 0.25rem #000;
 }
@@ -44,9 +49,19 @@ import Siderbar from './component/Siderbar.vue';
     display: none;
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 992px) {
     .slider-button {
         display: inline;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .offcanvas-start {
+        display: none;
+    }
+
+    .offcanvas-backdrop {
+        background-color: #00000000;
     }
 }
 </style>

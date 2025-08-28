@@ -1,34 +1,50 @@
 <script setup>
-import IsLogin from '../../IsLogin.vue';
+import { ref, onMounted, onUnmounted } from 'vue';
+import SideBody from './SideBody.vue';
+
+const sidebarBox = ref(null);
+
+const handleMouseOver = () => {
+    sidebarBox.value.classList.add('expanded');
+};
+
+const handleMouseLeave = () => {
+    sidebarBox.value.classList.remove('expanded');
+};
+
+onMounted(() => {
+    sidebarBox.value.addEventListener('mouseover', handleMouseOver);
+    sidebarBox.value.addEventListener('mouseleave', handleMouseLeave);
+
+});
+
+onUnmounted(() => {
+    sidebarBox.value.removeEventListener('mouseover', handleMouseOver);
+    sidebarBox.value.removeEventListener('mouseleave', handleMouseLeave);
+});
 </script>
 
 <template>
-    <div class="slider-inbox">
-        <div class="box1">
-            <div class="box2">
-                <router-link to="/">HomePage</router-link>
-                <router-link to="/logfile" style="margin-top:20px;">Daily_Details</router-link>
-                <router-link to="/logfile" style="margin-top:20px;">Logfile</router-link>
-                <router-link to="/profile" style="margin-top:20px;">Profile</router-link>
-            </div>
-            <IsLogin />
-        </div>
+    <div ref="sidebarBox" class="box bg-dark">
+        <SideBody />
     </div>
 </template>
 
-<style scoped>
-.box1 {
-    padding: 20px;
-    height: 90vh;
-    display: grid;
-    justify-content: center;
-    align-content: space-between;
-    justify-items: center;
+<style>
+.box {
+    height: 100vh;
+    width: 10vh;
+    overflow: hidden;
+    transition: width 0.5s ease 0.1s;
+
+    color: var(--main-color);
 }
 
-.box2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.box.expanded {
+    width: 240px;
+}
+
+.box.expanded {
+    opacity: 1;
 }
 </style>

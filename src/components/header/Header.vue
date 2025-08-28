@@ -1,5 +1,5 @@
 <script setup>
-import Sidenav from './Sidenav.vue';
+import Sidenav from './component/Sidenav.vue';
 import Sliderbar from './component/Siderbar.vue';
 
 import { useAuthStore } from "../../stores/authStore";
@@ -18,18 +18,12 @@ const authStore = useAuthStore();
             <div style="margin-right: 20px;">User ID: {{ authStore.data.username }}</div>
         </div>
     </nav>
-    <div class="slider-box text-bg-dark h5">
+    <div class="slider-box fixed-top" style="top: 55px;">
         <Sliderbar />
     </div>
 </template>
 
 <style scoped>
-.slider-box {
-    position: fixed;
-    height: 100vh;
-    width: 15%;
-}
-
 @media screen and (max-width: 992px) {
     .slider-box {
         display: none;

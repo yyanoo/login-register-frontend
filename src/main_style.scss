@@ -4,6 +4,7 @@ $sub_color: #2c3e50;
 :root {
     --main-color: #{$main_color};
     --sub-color: #{$sub_color};
+    user-select: none;
 }
 
 html,
@@ -20,6 +21,12 @@ body {
     color: var(--main-color);
     text-align: center;
     margin: 20px 0;
+}
+
+@media screen and (min-width: 992px) {
+    .offcanvas-backdrop {
+        background-color: #00000000;
+    }
 }
 
 @media screen and (max-width: 768px) {
