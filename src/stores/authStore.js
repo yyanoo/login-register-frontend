@@ -10,7 +10,7 @@ export const useAuthStore = defineStore("auth", {
   state: () => ({
     data: {},
     playerData: {},
-    isLoggedIn: false,
+    isLoggedIn: true,
   }),
 
   actions: {
@@ -50,6 +50,7 @@ export const useAuthStore = defineStore("auth", {
     async logout() {
       this.data = {};
       this.isLoggedIn = false;
+      router.push({ name: "UnLogin_page" });
       await logout();
     },
 

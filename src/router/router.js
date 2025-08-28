@@ -6,17 +6,16 @@ const routes = [
     path: "/",
     name: "Index",
     component: () => import("../pages/Index.vue"),
-    meta: { requiresAuth: true }, // 需要登入才能訪問
   },
   {
     path: "/logfile",
-    name: "logfile",
+    name: "Logfile",
     component: () => import("../pages/LogFile.vue"),
     meta: { requiresAuth: true }, // 需要登入才能訪問
   },
   {
     path: "/profile",
-    name: "profile",
+    name: "Profile",
     component: () => import("../pages/Profile.vue"),
     meta: { requiresAuth: true }, // 需要登入才能訪問
   },

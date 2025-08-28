@@ -1,6 +1,6 @@
 <script setup>
-import Sidebar from './Sidebar.vue';
-import IsLogin from '../IsLogin.vue';
+import Sidenav from './Sidenav.vue';
+import Sliderbar from './component/Siderbar.vue';
 
 import { useAuthStore } from "../../stores/authStore";
 
@@ -12,22 +12,14 @@ const authStore = useAuthStore();
     <nav class="navbar fixed-top text-bg-dark">
         <div class="container-fluid">
             <div class="d-flex align-items-center">
-                <Sidebar />
+                <Sidenav />
                 <a class="navbar-brand text-bg-dark" style="margin-left: 20px;">Api_test</a>
             </div>
-            <div class="">{{ authStore.data.username }}</div>
+            <div style="margin-right: 20px;">User ID: {{ authStore.data.username }}</div>
         </div>
     </nav>
-    <div class="slider-box text-bg-dark">
-        <div class="box">
-            <div class="d-flex flex-column align-items-center" style="height: 750px; display: grid;">
-                <router-link to="/">HomePage</router-link>
-                <router-link to="/" style="margin-top:10px;">Daily_Details</router-link>
-                <router-link to="/" style="margin-top:10px;">Logfile</router-link>
-                <router-link to="/" style="margin-top:10px;">Profile</router-link>
-            </div>
-            <IsLogin />
-        </div>
+    <div class="slider-box text-bg-dark h5">
+        <Sliderbar />
     </div>
 </template>
 
@@ -35,18 +27,10 @@ const authStore = useAuthStore();
 .slider-box {
     position: fixed;
     height: 100vh;
-    width: 12%;
+    width: 15%;
 }
 
-.box {
-    height: 95vh;
-    padding: 30px 20px;
-
-    display: grid;
-    justify-items: center;
-}
-
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 992px) {
     .slider-box {
         display: none;
     }

@@ -1,5 +1,5 @@
 <script setup>
-import IsLogin from '../IsLogin.vue';
+import Siderbar from './component/Siderbar.vue';
 </script>
 
 <template>
@@ -17,21 +17,12 @@ import IsLogin from '../IsLogin.vue';
     <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
         aria-labelledby="offcanvasWithBothOptionsLabel">
         <div class="offcanvas-header text-bg-dark">
-            <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdrop with scrolling</h5>
+            <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Information</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-            <div class="slider-box">
-                <div class="box h3">
-
-                    <div class="d-flex flex-column align-items-center" style="height: 720px; display: grid;">
-                        <router-link to="/">HomePage</router-link>
-                        <router-link to="/" style="margin-top:20px;">Profile</router-link>
-                        <router-link to="/" style="margin-top:20px;">Details</router-link>
-                    </div>
-                    <IsLogin />
-                </div>
-
+            <div class="slider-box h3">
+                <Siderbar />
             </div>
         </div>
     </div>
@@ -42,17 +33,7 @@ import IsLogin from '../IsLogin.vue';
 .offcanvas-body {
     background-color: var(--sub-color);
     color: white;
-
-    display: flex;
-    flex-direction: column;
-}
-
-.box {
-    height: 80vh;
-    padding: 20px;
-
-    display: grid;
-    justify-items: center;
+    padding: 0;
 }
 
 .btn-close {
@@ -63,7 +44,7 @@ import IsLogin from '../IsLogin.vue';
     display: none;
 }
 
-@media screen and (max-width: 1299px) {
+@media screen and (max-width: 991px) {
     .slider-button {
         display: inline;
     }

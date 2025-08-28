@@ -13,8 +13,8 @@ import Header from './components/header/Header.vue';
 
 <style scoped>
 .pages_container {
-  width: 88%;
-  margin-left: 12%;
+  width: 85%;
+  margin-left: 15%;
   margin-right: auto;
   margin-top: 50px;
   padding: 50px 50px;
