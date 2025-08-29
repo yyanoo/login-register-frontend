@@ -93,8 +93,4 @@ const myChartData = {
         margin: 20px 0 0 0;
     }
 }
-
-@media screen and (max-width: 768px) {}
-
-@media screen and (max-width: 576px) {}
 </style>

@@ -1,0 +1,27 @@
+.item {
+    padding: 20px 20px 20px 20px;
+    display: flex;
+    align-items: center;
+
+    transition: color 0.75s ease 0.1s;
+    transition: background-color 0.25s ease 0.1s;
+}
+
+.item:hover {
+    color: #b9cee2;
+    background-color: #8aaac97f;
+}
+
+.text {
+    margin-left: 30px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media screen and (max-width: 992px) {
+    .item {
+        transition: none;
+    }
+}

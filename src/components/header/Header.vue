@@ -1,6 +1,11 @@
 <script setup>
 import Sidenav from './component/Sidenav.vue';
 import Sliderbar from './component/Siderbar.vue';
+import Authmodal from './component/Authmodal.vue';
+import Forgetmodal from './component/Forgetmodal.vue';
+import Logoutmodal from './component/Logoutmodal.vue';
+
+
 
 import { useAuthStore } from "../../stores/authStore";
 
@@ -21,6 +26,9 @@ const authStore = useAuthStore();
     <div class="slider-box fixed-top" style="top: 55px;">
         <Sliderbar />
     </div>
+    <Authmodal />
+    <Forgetmodal />
+    <Logoutmodal />
 </template>
 
 <style scoped>
@@ -29,8 +37,4 @@ const authStore = useAuthStore();
         display: none;
     }
 }
-
-@media screen and (max-width: 768px) {}
-
-@media screen and (max-width: 576px) {}
 </style>

@@ -1,5 +1,5 @@
 <script setup>
-import SideBody from './SideBody.vue';
+import SideBody from './SIdeBody/SideBody.vue';
 
 </script>
 
@@ -15,7 +15,7 @@ import SideBody from './SideBody.vue';
             </div>
         </button>
     </div>
-    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+    <div class="offcanvas offcanvas-start sidebody" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
         aria-labelledby="offcanvasWithBothOptionsLabel">
         <div class="offcanvas-header text-bg-dark">
             <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Information</h5>
@@ -49,19 +49,18 @@ import SideBody from './SideBody.vue';
     display: none;
 }
 
-@media screen and (max-width: 992px) {
-    .slider-button {
-        display: inline;
+@media screen and (min-width: 992px) {
+    .sidebody{
+        display: none;
+    }
+    .offcanvas-backdrop{
+        background-color: #00000000 !important;
     }
 }
 
-@media screen and (min-width: 992px) {
-    .offcanvas-start {
-        display: none;
-    }
-
-    .offcanvas-backdrop {
-        background-color: #00000000;
+@media screen and (max-width: 992px) {
+    .slider-button {
+        display: inline;
     }
 }
 </style>

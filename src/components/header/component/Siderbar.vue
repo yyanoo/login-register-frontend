@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
-import SideBody from './SideBody.vue';
+import SideBody from './SIdeBody/SideBody.vue';
 
 const sidebarBox = ref(null);
 
@@ -25,26 +25,25 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <div ref="sidebarBox" class="box bg-dark">
+    <div ref="sidebarBox" class="sider-mianbox bg-dark">
         <SideBody />
     </div>
 </template>
 
-<style>
-.box {
+<style scoped>
+.sider-mianbox {
     height: 100vh;
     width: 10vh;
     overflow: hidden;
     transition: width 0.5s ease 0.1s;
 
     color: var(--main-color);
+
+    position: absolute;
 }
 
-.box.expanded {
-    width: 240px;
-}
-
-.box.expanded {
+.sider-mianbox.expanded {
+    width: 260px;
     opacity: 1;
 }
 </style>
