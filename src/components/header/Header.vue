@@ -32,6 +32,10 @@ const authStore = useAuthStore();
 </template>
 
 <style scoped>
+.navbar {
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
 @media screen and (max-width: 992px) {
     .slider-box {
         display: none;

@@ -13,7 +13,8 @@ import Header from './components/header/Header.vue';
 
 <style scoped>
 .pages_container {
-  width: -92.5vh;
+  height: 100%;
+  width: auto;
   margin-left: 10vh;
   margin-right: auto;
   margin-top: 50px;
@@ -26,7 +27,7 @@ import Header from './components/header/Header.vue';
 @media screen and (max-width: 992px) {
   .pages_container {
     width: 100%;
-    margin: 70px 0 0 0;
+    margin: 50px 0 0 0;
     padding: 30px 20px;
   }
 }

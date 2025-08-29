@@ -48,6 +48,10 @@ a {
     .offcanvas-backdrop {
         background-color: #00000000;
     }
+
+    .container {
+        max-width: 1800px;
+    }
 }
 
 @media screen and (max-width: 768px) {

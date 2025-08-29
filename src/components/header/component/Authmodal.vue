@@ -29,7 +29,7 @@ const switchMode = (target) => {
                 <div class="modal-body" v-if="mode === 'login'">
                     <input type="text" class="input" placeholder="UserName">
                     <input type="password" class="input" placeholder="Password">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" style="margin-top: 5px;">
+                    <button type="button" class="btn btn-primary" style="margin-top: 5px;">
                         {{ modeMap[mode] }}
                     </button>
                 </div>
@@ -39,7 +39,7 @@ const switchMode = (target) => {
                     <input type="email" class="input" placeholder="Email">
                     <input type="password" class="input" placeholder="Password">
                     <input type="password" class="input" placeholder="Confirm Password">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" style="margin-top: 5px;">
+                    <button type="button" class="btn btn-primary" style="margin-top: 5px;">
                         {{ modeMap[mode] }}
                     </button>
                 </div>

@@ -13,7 +13,7 @@ const logout = () => {
 <template>
     <div class="d-flex justify-content-start item" v-if="authStore.isLoggedIn === true" data-bs-toggle="modal"
         data-bs-target="#logoutBackdrop">
-        <div class="" style="margin-left: 10px;">
+        <div class="sideIcon">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-door-open"
                 viewBox="0 0 16 16">
                 <path d="M8.5 10c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1" />
@@ -28,7 +28,7 @@ const logout = () => {
 
     <div class="d-flex justify-content-start item" v-if="authStore.isLoggedIn === false" data-bs-toggle="modal"
         data-bs-target="#authModal">
-        <div class="" style="margin-left: 10px;">
+        <div class="sideIcon">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-door-open"
                 viewBox="0 0 16 16">
                 <path d="M8.5 10c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1" />
@@ -37,7 +37,7 @@ const logout = () => {
             </svg>
         </div>
         <div class="text d-flex" style="overflow: hidden;">
-            <div>Login</div>/<div>Register</div>
+            <div style="margin-right: 5px;">Login</div>/<div style="margin-left: 5px;">Register</div>
         </div>
     </div>
 </template>

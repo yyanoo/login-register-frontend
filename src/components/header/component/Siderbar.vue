@@ -40,6 +40,7 @@ onUnmounted(() => {
     color: var(--main-color);
 
     position: absolute;
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .sider-mianbox.expanded {

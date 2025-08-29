@@ -8,7 +8,7 @@ import IsLogin from './IsLogin.vue';
     <div class="sidebod_container">
         <div class="inbox">
             <router-link to="/" class="item">
-                <div class="">
+                <div class="sideIcon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                         class="bi bi-house" viewBox="0 0 16 16">
                         <path
@@ -18,7 +18,7 @@ import IsLogin from './IsLogin.vue';
                 <div class="text">Home</div>
             </router-link>
             <router-link to="/profile" class="item">
-                <div class="">
+                <div class="sideIcon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                         class="bi bi-person-fill" viewBox="0 0 16 16">
                         <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
@@ -27,7 +27,7 @@ import IsLogin from './IsLogin.vue';
                 <div class="text">Profile</div>
             </router-link>
             <router-link to="/logfile" class="item">
-                <div class="">
+                <div class="sideIcon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                         class="bi bi-file-earmark-fill" viewBox="0 0 16 16">
                         <path
@@ -37,7 +37,7 @@ import IsLogin from './IsLogin.vue';
                 <div class="text">Text</div>
             </router-link>
             <router-link to="/" class="item">
-                <div class="">
+                <div class="sideIcon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                         class="bi bi-file-ruled" viewBox="0 0 16 16">
                         <path
