@@ -9,11 +9,21 @@
 
 .item:hover {
     color: #b9cee2;
-    background-color: #8aaac97f;
+    background-color: #cde7ff15;
 }
 
-.sideIcon{
+.item:active {
+    background: #06233f9a;
+
+}
+
+.router-link-active {
+    background-color: #2162be;
+}
+
+.sideIcon {
     margin-left: 10px;
+    color: var(--main-color);
 }
 
 .text {

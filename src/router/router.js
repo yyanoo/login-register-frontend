@@ -20,16 +20,6 @@ const routes = [
     meta: { requiresAuth: true }, // 需要登入才能訪問
   },
   {
-    path: "/login",
-    name: "Login",
-    component: () => import("../pages/LoginAndResgister/Login.vue"),
-  },
-  {
-    path: "/register",
-    name: "Register",
-    component: () => import("../pages/LoginAndResgister/Register.vue"),
-  },
-  {
     path: "/un_login_page",
     name: "UnLogin_page",
     component: () => import("../pages/Unlogin_page.vue"),

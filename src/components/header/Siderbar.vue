@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
-import SideBody from './SIdeBody/SideBody.vue';
+import SideBody from '../header/component/SIdeBody/SideBody.vue';
 
 const sidebarBox = ref(null);
 
@@ -46,5 +46,11 @@ onUnmounted(() => {
 .sider-mianbox.expanded {
     width: 260px;
     opacity: 1;
+}
+
+@media screen and (max-width: 992px) {
+    .sider-mianbox {
+        display: none;
+    }
 }
 </style>

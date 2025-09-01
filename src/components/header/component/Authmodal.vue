@@ -1,15 +1,57 @@
 <script setup>
 import { ref } from "vue"
+import { useAuthStore } from "../../../stores/authStore";
+
+const username = ref('');
+const email = ref('');
+const password = ref('');
+const confirmPassword = ref('');
+
+const authStore = useAuthStore();
+
+const login = () => {
+    authStore.login({
+        username: username.value,
+        password: password.value,
+    });
+}
+
+function isValidEmail(email) {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+}
+
+const register = async () => {
+    if (!isValidEmail(email.value)) {
+        alert("Please enter a valid Email format!");
+        return;
+    }
+    if (password.value !== confirmPassword.value) {
+        alert("Passwords do not match!");
+        return;
+    }
+    authStore.register({
+        username: username.value,
+        email: email.value,
+        password: password.value,
+    });
+    switchMode("login")
+    alert("Successful Register");
+}
 
 const mode = ref("login")
-
 const modeMap = {
     login: "Login",
     register: "Register",
 }
 
-const switchMode = (target) => {
-    mode.value = target
+const switchMode = async (target) => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            mode.value = target
+            resolve()
+        }, 0)
+    })
 }
 </script>
 
@@ -26,22 +68,36 @@ const switchMode = (target) => {
                 </div>
 
                 <!-- Body -->
-                <div class="modal-body" v-if="mode === 'login'">
-                    <input type="text" class="input" placeholder="UserName">
-                    <input type="password" class="input" placeholder="Password">
-                    <button type="button" class="btn btn-primary" style="margin-top: 5px;">
-                        {{ modeMap[mode] }}
-                    </button>
+                <div v-if="mode === 'login'">
+                    <form @submit.prevent="login">
+                        <div class="modal-body">
+                            <input type="text" class="input" autocomplete="username" v-model="username"
+                                placeholder="Username">
+                            <input type="password" class="input" autocomplete="password" v-model="password"
+                                placeholder="Password">
+                            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal"
+                                style="margin-top: 5px;">
+                                {{ modeMap[mode] }}
+                            </button>
+                        </div>
+                    </form>
                 </div>
 
-                <div class="modal-body" v-else-if="mode === 'register'">
-                    <input type="text" class="input" placeholder="UserName">
-                    <input type="email" class="input" placeholder="Email">
-                    <input type="password" class="input" placeholder="Password">
-                    <input type="password" class="input" placeholder="Confirm Password">
-                    <button type="button" class="btn btn-primary" style="margin-top: 5px;">
-                        {{ modeMap[mode] }}
-                    </button>
+                <div v-else-if="mode === 'register'">
+                    <form @submit.prevent="register">
+                        <div class="modal-body">
+                            <input type="text" class="input" autocomplete="username" v-model="username"
+                                placeholder="UserName">
+                            <input type="email" class="input" autocomplete="email" v-model="email" placeholder="Email">
+                            <input type="password" class="input" autocomplete="new-password" v-model="password"
+                                placeholder="Password">
+                            <input type="password" class="input" autocomplete="new-password" v-model="confirmPassword"
+                                placeholder="ConfirmPassword">
+                            <button type="submit" class="btn btn-primary" style="margin-top: 5px;">
+                                {{ modeMap[mode] }}
+                            </button>
+                        </div>
+                    </form>
                 </div>
 
                 <!-- Footer -->
@@ -67,6 +123,11 @@ const switchMode = (target) => {
 </template>
 
 <style scoped>
+form {
+    display: flex;
+    flex-direction: column;
+}
+
 .modal {
     transform: translateY(200px);
 }

@@ -10,7 +10,7 @@ export const useAuthStore = defineStore("auth", {
   state: () => ({
     data: {},
     playerData: {},
-    isLoggedIn: true,
+    isLoggedIn: false,
   }),
 
   actions: {
@@ -18,7 +18,6 @@ export const useAuthStore = defineStore("auth", {
       try {
         const res = await registerUser(payload);
         console.log(res.message);
-        router.push({ name: "Login" });
       } catch (err) {
         if (err.response) {
           // 後端回傳的狀態碼 & 訊息
