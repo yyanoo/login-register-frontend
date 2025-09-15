@@ -1,0 +1,1 @@
+import{_ as s,c as t,b as o,f as a}from"./index-DJBAIyvp.js";const c={},n={class:"container bg-dark"};function r(_,e){return a(),t("div",n,[...e[0]||(e[0]=[o("div",{class:"main_text"},"Shop ",-1)])])}const i=s(c,[["render",r]]);export{i as default};

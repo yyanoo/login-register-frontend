@@ -1,0 +1,1 @@
+import{_ as s,c as t,b as n,f as a}from"./index-DJBAIyvp.js";const o={},r={class:"container bg-dark"};function c(i,e){return a(),t("div",r,[...e[0]||(e[0]=[n("div",{class:"main_text"},"Please Login Or Register ",-1)])])}const d=s(o,[["render",c]]);export{d as default};

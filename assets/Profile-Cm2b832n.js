@@ -1,0 +1,1 @@
+import{a as o,o as r,c as n,b as a,t,e as s,f as c}from"./index-DJBAIyvp.js";const _={class:"container bg-dark"},d={class:"main_text"},i={class:"main_text"},f={__name:"Profile",setup(l){const e=o();return r(()=>{e.player()}),(p,m)=>(c(),n("div",_,[a("div",d,"ID:"+t(s(e).data.playerid),1),a("div",i,"Gold:"+t(s(e).data.gold),1)]))}};export{f as default};
