@@ -11,8 +11,8 @@ import { usePlayerStore } from '../../stores/player';
 const playerStore = usePlayerStore()
 const authStore = useAuthStore()
 
-onMounted(() => {
-    playerStore.player()
+onMounted(async () => {
+    await playerStore.player()
 })
 </script>
 

@@ -34,9 +34,17 @@ const register = async () => {
         username: username.value,
         email: email.value,
         password: password.value,
-    });
-    switchMode("login")
-    alert("Successful Register");
+    })
+        .then(() => {
+            // 註冊成功
+            switchMode("login");
+            alert("Successful Register");
+        })
+        .catch((error) => {
+            // 註冊失敗
+            console.error(error);
+            alert("Register Failed: " + error.message);
+        });
 }
 
 const mode = ref("login")

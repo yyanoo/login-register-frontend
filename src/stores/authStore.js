@@ -34,6 +34,14 @@ export const useAuthStore = defineStore("auth", {
         this.data = res.data;
         this.isLoggedIn = true;
         router.push({ name: "Index" });
+
+        localStorage.setItem(
+          "auth",
+          JSON.stringify({
+            data: this.data,
+            isLoggedIn: this.isLoggedIn,
+          })
+        );
       } catch (err) {
         if (err.response) {
           // 後端回傳的狀態碼 & 訊息
@@ -50,6 +58,17 @@ export const useAuthStore = defineStore("auth", {
       this.isLoggedIn = false;
       router.push({ name: "UnLogin_page" });
       await logout();
+      localStorage.removeItem("auth");
     },
+
+    init() {
+      const stored = localStorage.getItem("auth");
+      if (stored) {
+        const parsed = JSON.parse(stored);
+        this.data = parsed.data;
+        this.isLoggedIn = parsed.isLoggedIn;
+      }
+    },
+    
   },
 });
