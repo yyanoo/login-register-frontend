@@ -108,10 +108,8 @@ const switchMode = async (target) => {
                 </div>
 
                 <div class="modal-footer" v-if="mode !== 'register'">
-                    <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                        data-bs-target="#forgetBackdrop">
-                        Forget Password
-                    </button>
+
+
                     <button type="button" class="btn btn-success" @click="switchMode('register')">
                         Register
                     </button>
