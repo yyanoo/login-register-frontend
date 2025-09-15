@@ -1,1 +1,0 @@
-import{_ as s,c as t,a,e as n}from"./index-ButLElRO.js";const o={},r={class:"container bg-dark"};function c(i,e){return n(),t("div",r,[...e[0]||(e[0]=[a("div",{class:"main_text"},"Please Login Or Register ",-1)])])}const d=s(o,[["render",c]]);export{d as default};
