@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import { register, login, logout, profile } from "../api/auth";
+import { register, login, logout } from "../api/auth";
 import Router from "../router/router";
 
 const registerUser = register;
@@ -9,7 +9,6 @@ const router = Router;
 export const useAuthStore = defineStore("auth", {
   state: () => ({
     data: {},
-    playerData: {},
     isLoggedIn: false,
   }),
 
@@ -51,21 +50,6 @@ export const useAuthStore = defineStore("auth", {
       this.isLoggedIn = false;
       router.push({ name: "UnLogin_page" });
       await logout();
-    },
-
-    async profile() {
-      try {
-        const res = await profile();
-        this.playerData = res.data;
-      } catch (err) {
-        if (err.response) {
-          // 後端回傳的狀態碼 & 訊息
-          console.log("Message:", err.response.data.message);
-          alert(err.response.data.message);
-        } else {
-          console.error("Network or other error:", err);
-        }
-      }
     },
   },
 });

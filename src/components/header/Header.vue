@@ -4,12 +4,16 @@ import Authmodal from './component/Authmodal.vue';
 import Forgetmodal from './component/Forgetmodal.vue';
 import Logoutmodal from './component/Logoutmodal.vue';
 
+import { onMounted } from 'vue';
+import { useAuthStore } from '../../stores/authStore';
+import { usePlayerStore } from '../../stores/player';
 
+const playerStore = usePlayerStore()
+const authStore = useAuthStore()
 
-import { useAuthStore } from "../../stores/authStore";
-
-const authStore = useAuthStore();
-
+onMounted(() => {
+    playerStore.player()
+})
 </script>
 
 <template>
@@ -19,7 +23,10 @@ const authStore = useAuthStore();
                 <Sidenav />
                 <a class="navbar-brand text-bg-dark" style="margin-left: 20px;">Api_test</a>
             </div>
-            <div style="margin-right: 20px;">User ID: {{ authStore.data.username }}</div>
+            <div class="d-flex align-items-center" v-if="authStore.isLoggedIn">
+                <div class="" style="margin-right: 20px;">ID:{{ playerStore.data.playerid }}</div>
+                <div class="" style="margin-right: 20px;">Gold:{{ playerStore.data.gold }}</div>
+            </div>
         </div>
     </nav>
     <Authmodal />

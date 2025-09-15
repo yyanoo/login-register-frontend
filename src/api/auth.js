@@ -30,9 +30,9 @@ export const logout = async () => {
   return response.data;
 };
 
-export const profile = async () => {
+export const getPlayer = async ({ username }) => {
   const response = await axios.get(`${base_url}/api/auth/profile`, {
-    withCredentials: true,
+    params: { username },
   });
   return response.data;
 };

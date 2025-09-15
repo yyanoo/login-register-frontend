@@ -8,6 +8,12 @@ const routes = [
     component: () => import("../pages/Index.vue"),
   },
   {
+    path: "/shop",
+    name: "Shop",
+    component: () => import("../pages/Shop.vue"),
+    meta: { requiresAuth: true }, // 需要登入才能訪問
+  },
+  {
     path: "/logfile",
     name: "Logfile",
     component: () => import("../pages/LogFile.vue"),
