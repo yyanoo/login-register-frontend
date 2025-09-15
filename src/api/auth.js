@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const base_url = "http://localhost:3000";
+const base_url = "https://login-register-backend-13q6.onrender.com";
 
 export const register = async ({ username, email, password }) => {
   const response = await axios.post(`${base_url}/api/auth/register`, {
