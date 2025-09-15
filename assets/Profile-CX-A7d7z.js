@@ -1,0 +1,1 @@
+import{u as o,o as r,c as n,a,t,d as s,e as c}from"./index-Drvb_Bkd.js";const d={class:"container bg-dark"},_={class:"main_text"},i={class:"main_text"},f={__name:"Profile",setup(l){const e=o();return r(()=>{e.player()}),(p,u)=>(c(),n("div",d,[a("div",_,"ID:"+t(s(e).data.playerid),1),a("div",i,"Gold:"+t(s(e).data.gold),1)]))}};export{f as default};
