@@ -9,8 +9,8 @@ const confirmPassword = ref('');
 
 const authStore = useAuthStore();
 
-const login = () => {
-    authStore.login({
+const login = async () => {
+    await authStore.login({
         username: username.value,
         password: password.value,
     });
